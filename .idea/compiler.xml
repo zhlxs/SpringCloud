@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ms-consumer-feign" />
+        <module name="ms-strategy" />
+        <module name="ms-eurake3" />
+        <module name="ms-eurake2" />
+        <module name="ms-eurake1" />
+        <module name="ms-plugin" />
+        <module name="ms-consumer" />
+        <module name="ms-provider" />
+        <module name="ms-common" />
+        <module name="ms-ws" />
+        <module name="ms-provider-hystrix" />
+        <module name="ms-provider3" />
+        <module name="ms-provider2" />
+        <module name="ms-proxy" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
