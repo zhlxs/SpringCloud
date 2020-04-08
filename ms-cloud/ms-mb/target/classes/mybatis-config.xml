@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 根标签 -->
+<configuration>
+    <properties>
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url"
+                  value="jdbc:mysql://127.0.0.1:3306/ssm_demo?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT%2B8&amp;zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </properties>
+    <!--    开启驼峰匹配-->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <!--    类型别名是为 Java 类型命名的一个短的名字。它只和 XML 配置有关，存在的意义仅在于用来减少类完全限定名的冗余-->
+    <!--缺点：每个pojo类都要去配置。
+    解决方案：使用扫描包，扫描指定包下的所有类，扫描之后的别名就是类名（不区分大小写），建议使用的时候和类名一致。-->
+    <typeAliases>
+        <!--        <typeAlias type="com.demo.sp.pojo.UserInfo" alias="UserInfo"/>-->
+        <!--type:实体类的全路径。alias:别名，通常首字母大写-->
+        <package name="com.demo.sp.pojo"/>
+        <!--        Mybatis已经为普通的 Java 类型内建了许多相应的类型别名。它们都是大小写不敏感的.-->
+    </typeAliases>
+    <!-- mybatis-config.xml -->
+    <plugins>
+        <plugin interceptor="com.demo.sp.Interceptor.ExamplePlugin">
+            <!--            <property name="someProperty" value="100"/>-->
+            <property name="username" value="LiuYork"/>
+            <property name="password" value="123456"/>
+        </plugin>
+    </plugins>
+    <!-- 环境，可以配置多个，default：指定采用哪个环境 -->
+    <environments default="test">
+        <!-- id：唯一标识 -->
+        <environment id="test">
+            <!-- 事务管理器，JDBC类型的事务管理器 -->
+            <transactionManager type="JDBC"/>
+            <!-- 数据源，池类型的数据源 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+        <environment id="development">
+            <!-- 事务管理器，JDBC类型的事务管理器 -->
+            <transactionManager type="JDBC"/>
+            <!-- 数据源，池类型的数据源 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/> <!-- 配置了properties，所以可以直接引用 -->
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mappers/MyMapper.xml"/>
+        <mapper resource="mappers/UserDaoMapper.xml"/>
+        <mapper resource="mappers/UserMapper.xml"/>
+    </mappers>
+</configuration>

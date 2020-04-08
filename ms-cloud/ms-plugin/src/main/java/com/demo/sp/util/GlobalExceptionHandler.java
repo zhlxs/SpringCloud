@@ -5,12 +5,12 @@ package com.demo.sp.util;
  */
 public class GlobalExceptionHandler
 {
-//    @ResponseBody
-//    @ExceptionHandler(value = ApiException.class)
-//    public CommonResult handle(ApiException e) {
-//        if (e.getErrorCode() != null) {
-//            return CommonResult.failed(e.getErrorCode());
-//        }
-//        return CommonResult.failed(e.getMessage());
-//    }
+    //    @ResponseBody
+    //    @ExceptionHandler(value = ApiException.class)
+    //    public CommonResult handle(ApiException e) {
+    //        if (e.getErrorCode() != null) {
+    //            return CommonResult.failed(e.getErrorCode());
+    //        }
+    //        return CommonResult.failed(e.getMessage());
+    //    }
 }

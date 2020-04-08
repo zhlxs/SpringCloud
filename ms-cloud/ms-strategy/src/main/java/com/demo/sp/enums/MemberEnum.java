@@ -2,10 +2,7 @@ package com.demo.sp.enums;
 
 public enum MemberEnum
 {
-    ORDINARY_MEMBER(0, "普通会员"),
-    JUNIOR_MEMBER(1, "初级会员"),
-    INTERMEDIATE_MEMBER(2, "中级会员"),
-    SENIOR_MEMBER(3, "高级会员");
+    ORDINARY_MEMBER(0, "普通会员"), JUNIOR_MEMBER(1, "初级会员"), INTERMEDIATE_MEMBER(2, "中级会员"), SENIOR_MEMBER(3, "高级会员");
 
     int code;
     String desc;

@@ -1,4 +1,5 @@
 package com.demo.sp.annotation;
+
 import com.demo.sp.util.FlagValidatorClass;
 
 import javax.validation.Constraint;
@@ -7,7 +8,7 @@ import java.lang.annotation.*;
 
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.FIELD,ElementType.PARAMETER})
+@Target({ ElementType.FIELD, ElementType.PARAMETER })
 @Constraint(validatedBy = FlagValidatorClass.class)
 public @interface FlagValidator
 {
