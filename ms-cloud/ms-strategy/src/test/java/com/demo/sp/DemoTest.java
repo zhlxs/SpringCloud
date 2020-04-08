@@ -18,10 +18,10 @@ public class DemoTest
     public void test()
     {
         // 计算应缴纳费用
-        System.out.println(serviceFeeHolder.getFee("juniorMember", 1.333));
+        System.out.println(serviceFeeHolder.getFee("fourth", 1.333));
         // 获取会员标志
-        //System.out.println(serviceFeeHolder.getType("second"));
+        System.out.println(serviceFeeHolder.getType("second"));
         // 会员描述错误，抛 IllegalArgumentException
-        //System.out.println(serviceFeeHolder.getType("zero"));
+        System.out.println(serviceFeeHolder.getType("zero"));
     }
 }

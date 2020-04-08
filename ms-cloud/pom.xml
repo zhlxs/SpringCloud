@@ -16,6 +16,7 @@
         <module>ms-plugin</module>
         <module>ms-strategy</module>
         <module>ms-mbg</module>
+        <module>ms-security</module>
     </modules>
 
 

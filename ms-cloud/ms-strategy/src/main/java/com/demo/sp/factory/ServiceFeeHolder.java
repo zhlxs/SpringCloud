@@ -44,8 +44,8 @@ public class ServiceFeeHolder
     private FeeService getBean(String type)
     {
         // 根据配置中的别名获取该策略的实现类
-        //FeeService entStrategy = serviceFeeMap.get(aliasEntity.getEntity(type));
-        FeeService entStrategy = serviceFeeMap.get(type);
+        FeeService entStrategy = serviceFeeMap.get(aliasEntity.getEntity(type));
+        //FeeService entStrategy = serviceFeeMap.get(type);
         if (entStrategy == null)
         {
             // 找不到对应的策略的实现类，抛出异常
